@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+    .nav_pt1 h2{
+        font-size: 2.5rem;
+    }
+
+    .btn{
+        padding: 0.8rem 3rem;
+    }
+
+    main h1{
+        font-size: 4rem;
+    }
+
+    main p{
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 425px) {
+    .nav_pt1 h2{
+        font-size: 2rem;
+    }
+
+    .btn{
+        padding: 0.6rem 2rem;
+    }
+
+    main h1{
+        font-size: 2.5rem;
+    }
+
+    main p{
+        font-size: 1.3rem;
+    }
+}

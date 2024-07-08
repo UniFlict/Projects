@@ -1,0 +1,102 @@
+/*@import font*/
+
+::selection {
+  background-color: xyz;
+  color: xyz;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  scroll-behavior: smooth;
+}
+
+#result {
+  color: #fff;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.game {
+  width: 600px;
+  height: 190px;
+  border-bottom: 1px solid #fff;
+  margin: auto;
+  padding: 0 30px;
+
+  /* margin-top: 10rem; */
+}
+
+#dino {
+  width: 40px;
+  height: 45px;
+  background-color: #fff;
+  /* background-image: url(images/trex.png); */
+  /* background-size: 56px 50px; */
+
+  position: relative;
+  top: 150px;
+}
+
+.jump {
+  animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+
+  50% {
+    top: 80px;
+  }
+
+  100% {
+    top: 150px;
+  }
+}
+
+#cactus {
+  width: 20px;
+  height: 40px;
+  position: relative;
+  top: 110px;
+  left: 575px;
+  background-color: #fff;
+
+  /* background-image: url("images/cactus.png"); */
+  background-size: 20px 40px;
+
+  animation: block 1s infinite linear;
+}
+
+@keyframes block {
+  0% {
+    left: 580px;
+  }
+
+  100% {
+    left: -1px;
+  }
+}

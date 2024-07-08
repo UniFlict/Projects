@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+a {
+   text-decoration: none;
+}
+
+li {
+   text-decoration: none;
+}
+
+html, body {
+   height: 100%;
+   width: 100%;
+   font-family: "Poppins", sans-serif;
+
+   background-color: #000;
+   color: #fff;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   text-align: center;
+}
+.website{
+    padding: 2rem;
+    border: 1px solid #ff0000;
+    border-radius: 1rem;
+}
+.website, .guess_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.guess_box .text {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.guess_box p span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(0, 199, 0);
+}
+
+form {
+    margin-top: 1rem;
+}
+form, form input, form button {
+    width: 100%;
+
+}
+form input{
+    padding: 0.5rem 1rem;
+
+    border: none;
+    border: 1px solid red;
+    border-radius: 1rem;
+    background-color: #000;
+
+   color: #fff;
+}
+form button {
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    background-color: rgb(255, 25, 0);
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 1rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+form button:hover {
+    background-color: transparent;
+    border-color: red;
+
+ transition: 0.3s ease;
+ cursor: pointer;
+}
+
+.guess_result{ 
+    margin-top: 1rem;
+}
+.guess_result .PrevGuess {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.guess_result .prevGuessBox {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.guess_result .remainingNumber {
+    border: 1px solid #ff0000;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+.guess_result .result {
+    margin-top: 1rem;
+}

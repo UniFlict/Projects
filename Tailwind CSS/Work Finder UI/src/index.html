@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Tailwind CSS | Work Finder UI | UniFlict</title>
+
+    <!-- ========== REMIX ICON ========== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- TODO - Fix sidebar in phone -->
+  <body
+    class="flex flex-row font-ubuntu w-[100%] h-[100%] relative overflow-y-hidden laptopM:overflow-y-visible"
+  >
+    <div
+      id="sidebar"
+      class="sidebar w-[16%] h-screen overflow-scroll no-scrollbar cursor-default bg-[#0c0c0c] text-white flex flex-col justify-between px-6 py-8 laptopL:w-[15%] hidesidebar:absolute hidesidebar:z-[100] hidesidebar:w-fit hidesidebar:h-screen hidesidebar:left-[-200px] hidesidebar:justify-start transition-all"
+    >
+      <div class="sidebar-pt-1 text-3xl font-semibold">Works</div>
+
+      <div class="sidebar-pt-2 hidesidebar:mt-[200px]">
+        <ul class="flex flex-col gap-3 text-gray-300 font-medium text-lg">
+          <li
+            class="bg-white rounded-2xl text-black px-3 py-3 hover:transition ease-in-out duration-300 cursor-pointer"
+          >
+            <i class="ri-search-eye-line mr-2 text-base"></i>
+            <span>Home</span>
+          </li>
+
+          <li
+            class="hover:bg-white rounded-2xl hover:text-black px-3 py-3 hover:transition ease-in-out duration-300 cursor-pointer"
+          >
+            <i class="ri-notification-4-fill mr-2 text-base"></i>
+            <span>Notification</span>
+          </li>
+
+          <li
+            class="hover:bg-white rounded-2xl hover:text-black px-3 py-3 hover:transition ease-in-out duration-300 cursor-pointer"
+          >
+            <i class="ri-apps-fill mr-2 text-base"></i>
+            <span>My Apps</span>
+          </li>
+
+          <li
+            class="hover:bg-white rounded-2xl hover:text-black px-3 py-3 hover:transition ease-in-out duration-300 cursor-pointer"
+          >
+            <i class="ri-briefcase-4-fill mr-2 text-base"></i>
+            <span>Saved Jobs</span>
+          </li>
+
+          <li
+            class="hover:bg-white rounded-2xl hover:text-black px-3 py-3 hover:transition ease-in-out duration-300 cursor-pointer"
+          >
+            <i class="ri-settings-3-fill mr-2 text-base"></i>
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="sidebar-pt-3 bg-white text-black py-5 px-3 rounded-xl hidesidebar:hidden"
+      >
+        <div class="section-1 flex flex-col items-center">
+          <div class="image-container w-[75px] h-[75px] rounded-full truncate">
+            <img src="/images/profile-1.png" alt="profile-1" />
+          </div>
+          <div class="name mt-2 font-bold text-black text-lg">Alex.Talent</div>
+          <div class="profession text-TextDark text-sm font-semibold">
+            Graphic Designer
+          </div>
+        </div>
+
+        <div class="section-2 mt-6 laptopL:hidden">
+          <div class="heading font-bold text-base">Skills And Experties</div>
+          <div class="container mt-1 flex flex-wrap gap-2">
+            <span
+              class="bg-BgGray p-2 rounded-md w-fit text-TextDark font-medium text-sm"
+              >Graphic Designer</span
+            >
+            <span
+              class="bg-BgGray p-2 rounded-md w-fit text-TextDark font-medium text-sm"
+              >Illustrator</span
+            >
+            <span
+              class="bg-BgGray p-2 rounded-md w-fit text-TextDark font-medium text-sm"
+              >Photoshop</span
+            >
+            <span
+              class="bg-BgGray p-2 rounded-md w-fit text-TextDark font-medium text-sm"
+              >HTML/CSS</span
+            >
+          </div>
+        </div>
+
+        <div class="section-3 mt-4 laptopL:mt-2">
+          <button
+            class="bg-black w-full rounded-xl text-white text-base p-2 hover:bg-transparent hover:text-black border border-transparent hover:border-black transition laptopL:p-1"
+          >
+            View Profile
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="body-container w-[84%] px-8 py-8 flex flex-col hidesidebar:w-[100%] laptopM:px-5 mobileL:px-3"
+    >
+      <nav
+        class="w-[100%] flex flex-row gap-6 items-center justify-center laptopM:gap-4 tablet:gap-2 mobileL:gap-3"
+      >
+        <div
+          id="sidebar-btn"
+          class="menu px-3 py-2 bg-black rounded-xl items-center justify-center hidesidebar:flex hidden mobileL:px-2 mobileL:py-1"
+        >
+          <i class="ri-menu-4-line text-white text-xl"></i>
+        </div>
+
+        <div class="search relative w-[100%]">
+          <i
+            class="ri-search-2-line absolute top-[8px] left-2 text-2xl text-TextDark mobileL:top-[4px]"
+          ></i>
+          <input
+            class="bg-BgGray outline-none w-[100%] pl-11 py-3 rounded-xl mobileL:pl-10 mobileL:py-2"
+            type="text"
+            placeholder="Search for jobs or companies"
+          />
+        </div>
+
+        <div class="city relative w-[100%] laptopM:hidden">
+          <i
+            class="ri-map-pin-add-fill absolute top-[8px] left-2 text-2xl text-TextDark"
+          ></i>
+          <input
+            class="bg-BgGray outline-none w-[100%] pl-11 py-3 rounded-xl"
+            type="text"
+            type="text"
+            placeholder="Enter city, state, or region"
+          />
+        </div>
+
+        <button
+          class="bg-black text-white text-sm px-8 py-3 rounded-xl border border-transparent hover:bg-transparent hover:border-black hover:text-black transition-all tablet:hidden"
+        >
+          Search
+        </button>
+
+        <i
+          class="ri-notification-4-line text-black text-xl bg-BgGray px-3 py-2 rounded-full flex items-center justify-center tablet:hidden"
+        ></i>
+
+        <div class="profile flex items-center justify-center gap-2">
+          <div
+            class="image-container w-12 h-12 rounded-full truncate mobileL:w-10 mobileL:h-10"
+          >
+            <img
+              class="w[100%] h[100%]"
+              src="/images/profile-1.png"
+              alt="profile-1"
+            />
+          </div>
+
+          <div class="info flex flex-col mobileL:hidden">
+            <a class="text-sm font-[700] flex items-center gap-1" href="#"
+              >Reza.UI <i class="ri-arrow-down-s-line"></i
+            ></a>
+            <span class="text-sm text-TextDark font-medium">Reza@Test.com</span>
+          </div>
+        </div>
+      </nav>
+
+      <main class="flex laptopM:flex-col">
+        <div
+          class="main-pt-1 w-[80%] pr-10 pl-2 h-screen overflow-scroll no-scrollbar mt-8 laptopM:w-[100%] laptopM:h-fit laptopM:pr-2 laptopM:pl-2 laptopM:pb-2 laptopM:mt-[30px]"
+        >
+          <div class="header">
+            <div class="info font-bold text-lg">
+              Opportunities matching your skills
+              <span class="text-TextLight text-sm">300</span>
+            </div>
+            <span class="text-TextLight text-base font-medium"
+              >Here are jobs that fit your skill set</span
+            >
+          </div>
+
+          <div class="content mt-4">
+            <div class="card-grid grid grid-cols-2 gap-7 tablet:grid-cols-1">
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+
+              <div class="card p-4 rounded-2xl shadow-cardShadow">
+                <div class="card-header flex items-center justify-between">
+                  <div class="job-info flex gap-3">
+                    <i
+                      class="ri-apple-fill px-4 bg-BgGray text-4xl flex items-center justify-center"
+                    ></i>
+
+                    <div class="flex flex-col">
+                      <div class="text-base font-bold">
+                        Apple
+                        <span class="text-TextLight font-medium"
+                          >| Just Now</span
+                        >
+                      </div>
+                      <a class="font-semibold" href="#">Junior UI Designer</a>
+                      <span class="text-TextLight text-sm"
+                        >San Francisco, USA</span
+                      >
+                    </div>
+                  </div>
+
+                  <i
+                    class="ri-bookmark-2-line bookmark text-TextLight text-2xl"
+                  ></i>
+                </div>
+
+                <div class="card-tags mt-3 flex items-center gap-3">
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Remote</a
+                  >
+                  <a
+                    class="bg-BgGray px-3 py-1 text-sm rounded-md font-medium"
+                    href="#"
+                    >Freelance</a
+                  >
+                </div>
+
+                <div class="card-desc mt-4 text-TextLight">
+                  We are seeking a Junior UI Designer with a passion for
+                  creating intuitive user interfaces. Join our dynamic team at
+                  Apple and contribute to innovative design projects.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="invisible-space h-[150px] bg-transparent laptopM:hidden"
+          ></div>
+        </div>
+
+        <div
+          class="main-pt-2 w-[20%] h-screen overflow-scroll no-scrollbar mt-10 laptopM:w-[100%] laptopM:h-fit laptopM:order-[-1]"
+        >
+          <div class="header flex items-center justify-between">
+            <span class="text-xl font-bold">Job Filter</span>
+            <a class="text-red-500 text-sm font-semibold" href="#">Clear all</a>
+          </div>
+
+          <div
+            class="content grid grid-cols-1 gap-8 laptopM:grid-cols-2 mobileL:grid-cols-1 mobileL:gap-1"
+          >
+            <div class="time">
+              <div class="header mt-6 flex items-center justify-between">
+                <span class="font-semibold">Time</span>
+                <a class="text-red-500 text-sm font-semibold" href="#">Clear</a>
+              </div>
+
+              <div class="section mt-3 flex flex-col gap-2">
+                <div class="just-now flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="just-now-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="just-now-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Just Now</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >50 jobs</span
+                  >
+                </div>
+
+                <div class="weekly flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="weekly-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="weekly-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Weekly</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >150 jobs</span
+                  >
+                </div>
+
+                <div class="monthly flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="monthly-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="monthly-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Monthly</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >200 jobs</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="experience">
+              <div class="header mt-6 flex items-center justify-between">
+                <span class="font-semibold">Experience</span>
+                <a class="text-red-500 text-sm font-semibold" href="#">Clear</a>
+              </div>
+
+              <div class="section mt-3 flex flex-col gap-2">
+                <div class="just-now flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="entry-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="entry-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Entry</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >50 jobs</span
+                  >
+                </div>
+
+                <div class="junior flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="junior-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="junior-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Junior</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >100 jobs</span
+                  >
+                </div>
+
+                <div class="middle flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="middle-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="middle-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Middle</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >100 jobs</span
+                  >
+                </div>
+
+                <div class="senior flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="senior-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="senior-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Senior</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >50 jobs</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="job-type">
+              <div class="header mt-6 flex items-center justify-between">
+                <span class="font-semibold">Job Type</span>
+                <a class="text-red-500 text-sm font-semibold" href="#">Clear</a>
+              </div>
+
+              <div class="section mt-3 flex flex-col gap-2">
+                <div class="entry flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="full-time-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="full-time-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Full Time</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >50 jobs</span
+                  >
+                </div>
+
+                <div class="part-time flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="part-time-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="part-time-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Part Time</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >150 jobs</span
+                  >
+                </div>
+
+                <div class="contract flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="contract-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="contract-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Contract</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >100 jobs</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="job-location">
+              <div class="header mt-6 flex items-center justify-between">
+                <span class="font-semibold">Job Location</span>
+                <a class="text-red-500 text-sm font-semibold" href="#">Clear</a>
+              </div>
+
+              <div class="section mt-3 flex flex-col gap-2">
+                <div class="entry flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="on-site-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="on-site-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Entry</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >100 jobs</span
+                  >
+                </div>
+
+                <div class="search-location relative w-[95%]">
+                  <i
+                    class="ri-map-pin-add-fill absolute top-[8px] left-2 text-2xl text-TextDark"
+                  ></i>
+
+                  <input
+                    class="bg-BgGray outline-none text-sm w-[100%] pl-11 py-3 rounded-xl"
+                    type="text"
+                    type="text"
+                    placeholder="Search Location"
+                  />
+                </div>
+
+                <div class="remote flex items-center justify-between">
+                  <div class="checkbox flex items-center">
+                    <input
+                      id="remote-checkbox"
+                      type="checkbox"
+                      class="w-4 h-4 bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="remote-checkbox"
+                      class="ms-2 text-base font-medium text-TextDark"
+                      >Remote</label
+                    >
+                  </div>
+
+                  <span class="text-base font-medium text-TextDark"
+                    >50 jobs</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

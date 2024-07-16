@@ -1100,10 +1100,6 @@ video {
     z-index: 100;
   }
 
-  .hidesidebar\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
   .hidesidebar\:mt-\[200px\] {
     margin-top: 200px;
   }
@@ -1131,10 +1127,6 @@ video {
 
   .hidesidebar\:justify-start {
     justify-content: flex-start;
-  }
-
-  .hidesidebar\:justify-center {
-    justify-content: center;
   }
 }
 

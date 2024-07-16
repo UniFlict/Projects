@@ -1,3 +1,11 @@
+// 1. Deposit some money
+// 2. Determine number of lines to bet
+// 3. Collect a bet amount
+// 4. Spin
+// 5. Check if user win
+// 6. Give them their winning
+// 7. Play again
+
 const prompt = require("prompt-sync")();
 
 const ROWS = 3;

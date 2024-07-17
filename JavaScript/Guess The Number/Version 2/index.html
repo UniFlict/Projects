@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Guessing Game</title>
-    
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript | Guess The Number (V-2) | UniFlict</title>
 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="website">
-        <div class="guess_box">
-            <div class="text">Guess The Number</div>
-            <p>Choose Number Between <span>1 - 100</span></p>
-            <p>You have <span>10</span> attempts</p>
-        </div>
+      <div class="guess_box">
+        <div class="text">Guess The Number</div>
+        <p>Choose Number Between <span>1 - 100</span></p>
+        <p>You have <span>10</span> attempts</p>
+      </div>
 
-        <form>
-            <input type="text" id="UserInput" placeholder="Enter Your Guess">
-            <button type="submit" id="submit">Submit Guess</button>
-        </form>
+      <form>
+        <input type="text" id="UserInput" placeholder="Enter Your Guess" />
+        <button type="submit" id="submit">Submit Guess</button>
+      </form>
 
-        <div class="guess_result">
-            <div class="PrevGuess">
-                <!-- <span class="prevGuessBox"></span> -->
-            </div>
-            <div class="remainingNumber">Remaining: <span class="remaining">10</span> </div>
-            <div class="result"></div>
-            <div class="startNew" style="font-size: 1.2rem; cursor: pointer; margin-top: 1rem;">Start New Game</div>
+      <div class="guess_result">
+        <div class="PrevGuess">
+          <!-- <span class="prevGuessBox"></span> -->
         </div>
+        <div class="remainingNumber">
+          Remaining: <span class="remaining">10</span>
+        </div>
+        <div class="result"></div>
+        <div
+          class="startNew"
+          style="font-size: 1.2rem; cursor: pointer; margin-top: 1rem"
+        >
+          Start New Game
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

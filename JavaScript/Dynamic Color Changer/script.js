@@ -2,15 +2,15 @@ const rect = document.querySelector("#center");
 
 rect.addEventListener("mousemove", (e) => {
   const rectLocation = rect.getBoundingClientRect();
-  const insideRectVal = e.clientX - rectLocation.left;
+  const insideRect = e.clientX - rectLocation.left;
 
-  if (insideRectVal < rectLocation.width / 2) {
-    const redColor = gsap.utils.mapRange(
+  if (insideRect < rectLocation.width / 2) {
+    let redColor = gsap.utils.mapRange(
       0,
       rectLocation.width / 2,
       255,
       0,
-      insideRectVal
+      insideRect
     );
 
     gsap.to(rect, {
@@ -18,16 +18,16 @@ rect.addEventListener("mousemove", (e) => {
       ease: Power4,
     });
   } else {
-    const blueColor = gsap.utils.mapRange(
+    let blueColor = gsap.utils.mapRange(
       rectLocation.width / 2,
       rectLocation.width,
       0,
       255,
-      insideRectVal
+      insideRect
     );
 
     gsap.to(rect, {
-      backgroundColor: `rgb(0, 0,${blueColor})`,
+      backgroundColor: `rgb(0, 0, ${blueColor})`,
       ease: Power4,
     });
   }

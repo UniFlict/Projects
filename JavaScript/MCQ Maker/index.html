@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript | MCQ Maker UniFlict</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main-pt-1">
+      <h1>Questions</h1>
+
+      <!-- <div class="mcq">
+        <div class="question">What is the time?</div>
+        <div class="selects">
+          <button class="choice-btn choice-btn-1">a) Hello</button>
+          <button class="choice-btn choice-btn-2 correct">a) Hello</button>
+          <button class="choice-btn choice-btn-3 wrong">a) Hello</button>
+          <button class="choice-btn choice-btn-4">a) Hello</button>
+        </div>
+      </div> -->
+    </div>
+
+    <!--! ====================================== -->
+
+    <form class="main-pt-2">
+      <h1>Create Questions</h1>
+
+      <div class="title">
+        <label for="question-title">Question</label>
+        <div class="input">
+          <input type="text" id="question-title" placeholder="Your Question" />
+        </div>
+      </div>
+
+      <div class="option">
+        <label for="option-1">Option 1</label>
+        <div class="input">
+          <input type="text" id="option-1" placeholder="Your Question" />
+          <button type="button" class="ans" id="ans-1">✓</button>
+        </div>
+      </div>
+
+      <div class="option">
+        <label for="option-2">Option 2</label>
+        <div class="input">
+          <input type="text" id="option-2" placeholder="Your Question" />
+          <button type="button" class="ans" id="ans-2">✓</button>
+        </div>
+      </div>
+
+      <div class="option">
+        <label for="option-3">Option 3</label>
+        <div class="input">
+          <input type="text" id="option-3" placeholder="Your Question" />
+          <button type="button" class="ans" id="ans-3">✓</button>
+        </div>
+      </div>
+
+      <div class="option">
+        <label for="option-4">Option 4</label>
+        <div class="input">
+          <input type="text" id="option-4" placeholder="Your Question" />
+          <button type="button" class="ans" id="ans-4">✓</button>
+        </div>
+      </div>
+
+      <button id="create">CREATE</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+/*@import font*/
+
+::selection {
+  background-color: xyz;
+  color: xyz;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  scroll-behavior: smooth;
+  display: flex;
+}
+
+.main-pt-1 {
+  border-right: 1px solid #fff;
+  width: 50%;
+  height: 100vh;
+  padding: 4rem;
+}
+
+.main-pt-2 {
+  width: 50%;
+  height: 100vh;
+  padding: 4rem;
+}
+
+label {
+  font-size: 23px;
+}
+
+.title,
+.option {
+  margin-top: 20px;
+}
+
+.input {
+  display: flex;
+  gap: 5px;
+
+  margin-top: 10px;
+}
+
+input {
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+#create {
+  background-color: #fff;
+  padding: 0.6rem 1.6rem;
+  font-size: 15px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  margin-top: 30px;
+}
+#create:hover {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.ans {
+  background-color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 15px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+
+/* ================== */
+.main-pt-1 {
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.mcq {
+  margin-top: 20px;
+}
+
+.question {
+  font-size: 19px;
+}
+
+.selects {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.choice-btn {
+  font-size: 17px;
+  align-self: flex-start;
+  flex-wrap: wrap;
+
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/*! ---------------- */
+
+.correct-ans {
+  background-color: lime;
+}
+
+.show-correct {
+  border-color: lime;
+}
+
+.show-wrong {
+  border-color: red;
+}
+
+@media (max-width: 1024px) {
+  body {
+    flex-direction: column;
+  }
+
+  .main-pt-1 {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .main-pt-2 {
+    width: 100%;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-pt-1 {
+    padding: 3rem;
+  }
+
+  .main-pt-2 {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 525px) {
+  .main-pt-1 {
+    padding: 1rem;
+  }
+
+  .main-pt-2 {
+    padding: 1rem;
+  }
+}

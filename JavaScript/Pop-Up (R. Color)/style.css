@@ -1,0 +1,66 @@
+/*@import font*/
+
+::selection {
+  background-color: xyz;
+  color: xyz;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  scroll-behavior: smooth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#btn {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 3px 3px #fff;
+  padding: 1rem 2rem;
+}
+
+.popup {
+  right: -400px;
+  color: #fff;
+  position: absolute;
+  /* right: 10px; */
+  top: 20px;
+
+  border: 1px solid #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  font-size: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+  transition: 0.3s ease-in-out;
+}

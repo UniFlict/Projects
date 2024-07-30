@@ -1,0 +1,64 @@
+/*@import font*/
+
+::selection {
+  background-color: xyz;
+  color: xyz;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #181818;
+  scroll-behavior: smooth;
+
+  position: relative;
+}
+/* 
+#rect {
+  background-color: red;
+
+  position: absolute;
+
+  width: 100px;
+  height: 150px;
+} */
+
+#rect {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#mouse-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}

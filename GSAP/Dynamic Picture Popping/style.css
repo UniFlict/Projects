@@ -1,0 +1,61 @@
+/*@import font*/
+
+::selection {
+  background-color: xyz;
+  color: xyz;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+button,
+select,
+summary,
+[type="radio"],
+[type="submit"],
+[type="checkbox"] {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: xyz;
+  scroll-behavior: smooth;
+}
+
+#center {
+  width: 60%;
+  height: 60%;
+
+  /* background-color: red; */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.imagediv {
+  position: absolute;
+  width: 170px;
+  height: 270px;
+
+  overflow: hidden;
+  /* background-color: yellow; */
+}
+
+.imagediv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /** to hide image */
+  transform: translateY(100%);
+}

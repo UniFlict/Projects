@@ -1,11 +1,18 @@
-const lenis = new Lenis();
+gsap.registerPlugin(ScrollTrigger);
 
-function raf(time) {
-  lenis.raf(time);
+//!
+
+function lenis() {
+  const lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
   requestAnimationFrame(raf);
 }
-
-requestAnimationFrame(raf);
+lenis();
 
 //!
 
@@ -13,22 +20,25 @@ function videoContainerAnimation() {
   const playBtn = document.querySelector("#play");
   const videoContainer = document.querySelector(".video-container");
 
-  videoContainer.addEventListener("mousemove", (e) => {
-    gsap.to(playBtn, {
-      scale: 1,
-      opacity: 1,
+  const screenSize = window.matchMedia("(max-width: 1023px)");
 
-      left: e.x - 60,
-      top: e.y - 60,
+  if (!screenSize.matches) {
+    videoContainer.addEventListener("mousemove", (e) => {
+      gsap.to(playBtn, {
+        scale: 1,
+        opacity: 1,
+        left: e.x - 60,
+        top: e.y - 60,
+      });
     });
-  });
 
-  videoContainer.addEventListener("mouseleave", (e) => {
-    gsap.to(playBtn, {
-      scale: 0,
-      opacity: 0,
+    videoContainer.addEventListener("mouseleave", () => {
+      gsap.to(playBtn, {
+        scale: 0,
+        opacity: 0,
+      });
     });
-  });
+  }
 }
 videoContainerAnimation();
 
@@ -94,71 +104,132 @@ pageTwoDropDown();
 
 //!
 
-document.addEventListener("mousemove", (e) => {
-  gsap.to("#cursor", {
-    left: e.x,
-    top: e.y,
+function dynamicCursorCircle() {
+  document.addEventListener("mousemove", (e) => {
+    gsap.to("#cursor", {
+      left: e.x,
+      top: e.y,
+    });
   });
+
+  const page4Sections = document.querySelectorAll(".page-4 .section");
+
+  page4Sections.forEach((e) => {
+    e.addEventListener("mouseenter", () => {
+      gsap.to("#cursor", {
+        transform: "translate(-50%, -50%) scale(1)",
+        duration: 0.2,
+      });
+    });
+
+    e.addEventListener("mouseleave", () => {
+      gsap.to("#cursor", {
+        transform: "translate(-50%, -50%) scale(0)",
+        duration: 0.2,
+      });
+    });
+
+    document
+      .querySelector(".page-4 .section3")
+      .addEventListener("mouseenter", () => {
+        gsap.to("#cursor", {
+          transform: "translate(-50%, -50%) scale(1)",
+          duration: 0.2,
+
+          backgroundColor: "#ede6e6",
+        });
+      });
+
+    document
+      .querySelector(".page-4 .section3")
+      .addEventListener("mouseleave", () => {
+        gsap.to("#cursor", {
+          transform: "translate(-50%, -50%) scale(0)",
+          duration: 0.2,
+
+          backgroundColor: "#e6e6e6",
+        });
+      });
+
+    document
+      .querySelector(".page-4 .section4")
+      .addEventListener("mouseenter", (e) => {
+        gsap.to("#cursor", {
+          transform: "translate(-50%, -50%) scale(1)",
+          duration: 0.2,
+
+          backgroundColor: "#d6e0e0",
+        });
+      });
+
+    document
+      .querySelector(".page-4 .section4")
+      .addEventListener("mouseleave", () => {
+        gsap.to("#cursor", {
+          transform: "translate(-50%, -50%) scale(0)",
+          duration: 0.2,
+
+          backgroundColor: "#e6e6e6",
+        });
+      });
+  });
+}
+dynamicCursorCircle();
+
+//!
+
+function menuBtn() {
+  const menuBtn = document.querySelector(".menu-btn");
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+  });
+}
+menuBtn();
+
+//!
+
+// let logoChanged = false;
+
+// if (!logoChanged) {
+//   gsap.to(".logo img", {
+//     top: "-82px",
+
+//     duration: 0.2,
+
+//     scrollTrigger: "#nav-animation-trigger",
+//   });
+
+//   logoChanged = true;
+// } else {
+//   gsap.to(".logo img", {
+//     top: "82px",
+//     opacity: 0,
+//     duration: 0.5,
+
+//     scrollTrigger: ".website",
+//   });
+// }
+
+gsap.from(".logo img", {
+  y: "-83px",
+  duration: 0.2,
+  scrollTrigger: {
+    trigger: "#nav-animation-trigger",
+    start: "top center",
+    end: "bottom top",
+    toggleActions: "play reverse play reverse",
+    markers: false,
+  },
 });
 
-const page4Sections = document.querySelectorAll(".page-4 .section");
-
-page4Sections.forEach((e) => {
-  e.addEventListener("mouseenter", () => {
-    gsap.to("#cursor", {
-      transform: "translate(-50%, -50%) scale(1)",
-      duration: 0.2,
-    });
-  });
-
-  e.addEventListener("mouseleave", () => {
-    gsap.to("#cursor", {
-      transform: "translate(-50%, -50%) scale(0)",
-      duration: 0.2,
-    });
-  });
-
-  document
-    .querySelector(".page-4 .section3")
-    .addEventListener("mouseenter", () => {
-      gsap.to("#cursor", {
-        transform: "translate(-50%, -50%) scale(1)",
-        duration: 0.2,
-
-        backgroundColor: "#ede6e6",
-      });
-    });
-
-  document
-    .querySelector(".page-4 .section3")
-    .addEventListener("mouseleave", () => {
-      gsap.to("#cursor", {
-        transform: "translate(-50%, -50%) scale(0)",
-        duration: 0.2,
-
-        backgroundColor: "#e6e6e6",
-      });
-    });
-
-  document
-    .querySelector(".page-4 .section4")
-    .addEventListener("mouseenter", (e) => {
-      gsap.to("#cursor", {
-        transform: "translate(-50%, -50%) scale(1)",
-        duration: 0.2,
-
-        backgroundColor: "#d6e0e0",
-      });
-    });
-
-  document
-    .querySelector(".page-4 .section4")
-    .addEventListener("mouseleave", () => {
-      gsap.to("#cursor", {
-        transform: "translate(-50%, -50%) scale(0)",
-        duration: 0.2,
-
-        backgroundColor: "#e6e6e6",
-      });
-    });
+gsap.from("nav section .links-section", {
+  y: "-83px",
+  duration: 0.2,
+  scrollTrigger: {
+    trigger: "#nav-animation-trigger",
+    start: "top center",
+    end: "bottom top",
+    toggleActions: "play reverse play reverse",
+    markers: false,
+  },
 });

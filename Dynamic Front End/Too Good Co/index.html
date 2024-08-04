@@ -14,6 +14,33 @@
   <body>
     <div id="cursor"></div>
 
+    <div id="nav-animation-trigger"></div>
+
+    <nav>
+      <div class="logo">
+        <img src="/assets/images/text-logo.svg" />
+        <img src="/assets/images/logo.svg" />
+      </div>
+
+      <section>
+        <div class="links-section">
+          <a href="#">SHOP</a>
+          <a href="#">WHOLESALE</a>
+          <a href="#">CATERING <img src="/assets/images/arrow.svg" /></a>
+          <a href="#">DONATE</a>
+        </div>
+
+        <div class="icon-section">
+          <div class="menu-btn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+          </div>
+
+          <img src="/assets/images/store.svg" />
+        </div>
+      </section>
+    </nav>
+
     <div id="website" data-scroll-container>
       <div class="page-1">
         <h1 class="header-text1">CHANGE</h1>
@@ -41,7 +68,11 @@
 
       <div class="page-2">
         <div id="elem1" class="elem">
-          <img src="/assets/images/img1.webp" />
+          <img
+            data-scroll
+            data-scroll-speed="-0.1"
+            src="/assets/images/img1.webp"
+          />
 
           <div
             data-scroll
@@ -51,7 +82,7 @@
           >
             <div class="visible-container">
               <span>•</span>
-              <span>STORE</span>
+              <span>SHOP</span>
               <span>PANTRY</span>
               <i class="bx bx-chevron-right"></i>
             </div>
@@ -85,8 +116,8 @@
           >
             <div class="visible-container">
               <span>•</span>
-              <span>STORE</span>
-              <span>PANTRY</span>
+              <span>SHOP</span>
+              <span>HOME</span>
               <i class="bx bx-chevron-right"></i>
             </div>
 
@@ -119,8 +150,8 @@
           >
             <div class="visible-container">
               <span>•</span>
-              <span>STORE</span>
-              <span>PANTRY</span>
+              <span>SHOP</span>
+              <span>BATH</span>
               <i class="bx bx-chevron-right"></i>
             </div>
 
@@ -176,8 +207,8 @@
           <img src="/assets/images/img11.webp" />
 
           <div class="info">
-            <h3>JAC + JACK BUY 1, GIVE 1 BLANKET - GREY/RUST</h3>
-            <span>$380</span>
+            <h3>TWO GOOD CO. HOODIE</h3>
+            <span>$140</span>
           </div>
         </a>
 
@@ -185,8 +216,8 @@
           <img src="/assets/images/img12.webp" />
 
           <div class="info">
-            <h3>JAC + JACK BUY 1, GIVE 1 BLANKET - GREY/RUST</h3>
-            <span>$380</span>
+            <h3>TWO HUGS CANDLE</h3>
+            <span>$69</span>
           </div>
         </a>
 
@@ -194,8 +225,8 @@
           <img src="/assets/images/img13.webp" />
 
           <div class="info">
-            <h3>JAC + JACK BUY 1, GIVE 1 BLANKET - GREY/RUST</h3>
-            <span>$380</span>
+            <h3>THE GOOD NIGHT'S SLEEP CARE PACK</h3>
+            <span>$125</span>
           </div>
         </a>
       </div>
@@ -207,6 +238,7 @@
     </div>
 
     <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script>
       (function () {
@@ -220,6 +252,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script src="script.js"></script>
   </body>
 </html>

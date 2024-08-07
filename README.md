@@ -1,4 +1,4 @@
-# 🚀 UniFlict's Learning Journey
+# 🚀 UniFlict's projects
 
 Welcome to my **Learning** repository! Here, I document my path as I delve into the world of coding.
 

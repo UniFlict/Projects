@@ -7,7 +7,7 @@ Welcome to my **Projects** repository! Here, I document my path as I delve into 
 - **Discord**: @uniflict
 - **Twitter**: [@UniFlict](https://twitter.com/UniFlict)
 - **Instagram**: [@uniflict](https://instagram.com/uniflict)
-- **Linkedin**: @UniFlict
+- **Linkedin**: [@uniflict](www.linkedin.com/in//uniflict)
 
 Feel free to explore the projects, provide feedback. Let's learn and grow together!
 
